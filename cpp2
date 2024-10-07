@@ -1,0 +1,62 @@
+/* 접근 지정자(private, public)
+
+문제 2.  아래 main() 함수의 실행 결과가 [입출력 사례]와 같도록 Person 클래스를 작성하여 프로그램을 완성하시오. 단, main() 함수는 수정할 수 없다. 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+ Person person; // 이름(name)과 나이(age) 속성을 가짐
+ person.setName("John");
+ person.setAge(25);
+ cout << person.getName() << endl;
+ cout << person.age << endl;
+ return 0;
+}
+
+[입력]
+없음
+
+[출력]
+이름과 나이
+
+ 
+
+[입출력 사례]
+입력 
+John
+
+출력
+25
+  */
+#include <iostream>
+using namespace std;
+class Person {
+string name;
+public:
+ int age;
+ void setName(string s) {
+   name = s;
+ }
+ void setAge(int n) {
+   age = n;
+ }
+
+ string getName() {
+   return name;
+ }
+};
+
+int main() {
+   Person person;  // 이름(name)과 나이(age) 속성을 가짐
+   person.setName("John");
+   person.setAge(25);
+   cout << person.getName() << endl;
+   cout << person.age << endl;
+   return 0;
+}
+
+
+ 	
+
+
