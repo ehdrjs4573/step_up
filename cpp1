@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+class Tower {
+int n;
+public:
+ Tower() {
+   n = 1;
+ }
+ Tower(int i) {
+   n = i;
+ }
+ int getHeight() {
+   return n;
+ }
+};
+
+int main() {
+ Tower myTower;  // 1 미터
+ Tower seoulTower(100); // 100 미터
+ cout << myTower.getHeight() << endl;
+ cout << seoulTower.getHeight() << endl;
+}
