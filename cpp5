@@ -1,0 +1,47 @@
+/* 문제 5.  아래 main() 함수의 실행 결과가 [입출력 사례]와 같도록 Calculator 클래스를 구현하여 프로그램을 완성하시오. 단, main() 함수는 수정할 수 없다. 
+
+int main() {
+
+ Calculator calculator;
+
+ 
+
+ cout << calculator.add(3, 4) << endl;
+
+ cout << calculator.add(1, 2, 3) << endl;
+
+ cout << calculator.add(2.5, 3.7) << endl;
+
+ 
+
+ return 0;
+
+}
+*/
+#include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+ int add(int a, int b) {
+   return a+b;
+ }
+
+ int add(int a, int b, int c) {
+   return a+b+c;
+ }
+
+ double add(double a, double b) {
+   return a+b;
+ }
+};
+
+int main() {
+   Calculator calculator;
+
+   cout << calculator.add(3, 4) << endl;
+   cout << calculator.add(1, 2, 3) << endl;
+   cout << calculator.add(2.5, 3.7) << endl;
+
+   return 0;
+}
