@@ -1,0 +1,52 @@
+/*
+문제 7. 다음과 같은 기본 클래스인 Add가 주어졌다. 
+
+class Add {
+protected:
+ int x;
+ int y;
+public:
+ Add(int x, int y) {
+ this->x = x; this->y = y;
+ }
+ int add() { return x+y; }
+};
+
+Add 클래스를 상속 받는 파생 클래스 AddSub를 작성하여 프로그램을 완성하시오.  
+ - AddSub 클래스는 기본 생성자는 갖지 않고 두 정수를 인자로 받는 생성자만 구현
+ - AddSub 클래스에 두 수의 차를 구하는 sub() 함수 추가
+
+main() 함수는 다음과 같다. 단, Add 클래스와 main() 함수는 수정할 수 없다.  
+int main() {
+ AddSub ob(12, 15);
+ cout << ob.add() << “ ” << ob.sub() ;
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+class Add {
+protected:
+   int x;
+   int y;
+public:
+   Add(int x, int y) {
+      this->x = x; this->y = y;
+   }
+   int add() { return x+y; }
+};
+
+
+class AddSub: public Add {
+public:
+  AddSub(int x, int y):Add(x, y) {};
+  int sub() { return x-y; } 
+};
+
+int main() {
+ AddSub ob(12, 15);
+
+ cout << ob.add() << " " << ob.sub() ;
+}
+
