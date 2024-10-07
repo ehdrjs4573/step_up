@@ -1,0 +1,26 @@
+/*
+문제 6.  사용자로부터 두 개의 정수를 입력 받아, 두 수의 합과 차를 계산하는 함수를 작성하고자 한다.
+단, 이 함수는 참조에 의한 호출을 사용하여 합과 차를 반환한다. 아래 함수의 프로토타입에 맞추어 함수를 구현하고, 
+main() 함수에서는 두 개의 정수를 입력 받아 함수를 호출하고 결과를 출력하도록 프로그램을 작성하시오. 
+
+void SumDiff(int a, int b, int& sum, int& diff); 
+*/
+
+#include <iostream>
+using namespace std;
+
+void SumDiff(int a, int b, int& sum, int& diff) {
+ sum = a + b;
+ diff = a-b;
+}
+
+int main() {
+ int i, j;
+ int sum, diff;
+ cin >> i >> j;
+
+ SumDiff(i, j, sum, diff);
+
+ cout << sum << " " << diff ;
+ return 0;
+}
