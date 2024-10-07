@@ -1,0 +1,45 @@
+/*
+문제 9. 다음 설명에 맞추어 프로그램을 작성하시오.
+
+기본 클래스 Shape을 다음과 같이 정의한다.
+정수형 너비(width)와 정수형 높이(height)를 멤버로 갖고 있으며, 면적(area())을 계산하는 가상함수를 가지고 있다. 
+ 
+Shape 클래스를 상속 받는 파생 클래스 Rectangle을 다음과 같이 정의한다. 
+Rectangle 클래스는 Shape 클래스를 상속받는다.
+Rectangle 클래스는 기본 생성자를 갖지 않아야 하며, 너비와 높이를 인자로 받는 생성자를 구현한다.
+Rectangle 클래스는 Shape 클래스의 가상 함수인 area()를 오버라이딩하여 구현한다.
+ 
+다음 main() 함수의 실행 결과가 [입출력 사례]의 출력과 같도록 Shape 클래스와 Rectangle 클래스를 작성하여 프로그램을 완성하시오. 단, main() 함수는 수정할 수 없다. 
+int main() {
+ Rectangle rect(5, 3);
+ cout << rect.width << “ ” << rect.height << “ ” << rect.area() ;
+}
+*/
+
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+ int width, height;
+ virtual int area() =0;
+
+ Shape(int x, int y) {
+   width = x;
+   height = y;
+ }
+};
+
+class Rectangle : public Shape {
+public:
+Rectangle(int x, int y) : Shape(x, y) {}
+int area() {
+  return width * height;
+}
+};
+
+int main() {
+ Rectangle rect(5, 3);
+ cout << rect.width << " "<< rect.height << " " << rect.area() ;
+}
+
